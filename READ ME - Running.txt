@@ -1,0 +1,55 @@
+READ ME - Running
+
+1. Open Pycham - run as administrator
+
+2. Go to Constant.py
+
+3. Check on the ServerName - Kumanan\SQLEXPRESS
+
+4. Login to the MSSQL studio and restore the database as below
+	1. Rick click on Database
+	2. Click or restore database
+	3. Click on Device, Add, Select EHR folder under C Drive, select EHRV1.back and click ok. 
+Message - successfully database restored.
+
+5. Goto Pycham
+	Contract address to be checked and deployed.(ehr_contract_address in line 6)
+6. Go to Ganache ( we need to add the JS file)
+
+	Go to Settings, add project, select (C:\EHR\EHR-Truffle\truffle-config.js)
+
+7. to add the address deployed, Open node.js command promt
+run the command C:\>npm install -g truffle
+
+8. to deploy the contract address we have to compile truffle and migrate
+	C:\>cd EHR
+
+C:\EHR>dir
+ Volume in drive C is OS
+ Volume Serial Number is 2ACE-7D39
+
+ Directory of C:\EHR
+
+03-02-2025  15:00    <DIR>          .
+05-02-2025  11:40    <DIR>          .idea
+01-02-2025  17:30    <DIR>          EHR
+01-02-2025  17:30    <DIR>          EHR-Truffle
+01-02-2025  14:52        12,345,856 EHRV1.bak
+               1 File(s)     12,345,856 bytes
+               4 Dir(s)  72,129,122,304 bytes free
+
+C:\EHR>cd EHR-Truffle
+
+Compile  C:\EHR\EHR-Truffle>Truffle compile
+
+Migrate C:\EHR\EHR-Truffle>Truffle migrate
+
+Note - Under Ganache the transaction will be deployed. 
+
+9. under Ganache - under Contract - the address needs to be checked
+	Go to SQL under EHR - Table - right click the database and click on Edit top 200 to check the Hash and pre Hahs to mach with the Contract
+	Copy the address from Ganache and paste it in the Constant.py and then run the program.
+10. click on the hyperlink for the access
+
+
+
